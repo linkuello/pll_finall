@@ -1,0 +1,24 @@
+version: 1
+applications:
+  - appRoot: .
+    backend:
+      phases:
+        preBuild:
+          commands:
+            - pip install -r requirements.txt
+        build:
+          commands:
+            - python manage.py collectstatic --noinput
+            - python manage.py migrate
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - pip install -r requirements.txt
+        build:
+          commands:
+            - python manage.py collectstatic --noinput
+    artifacts:
+      baseDirectory: /path/to/your/build/output
+      files:
+        - '**/*'
