@@ -47,11 +47,6 @@ SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
-    }
-}
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
         'APP': {
             'client_id': '727889862674-5k5pqmsbv5s19e58qc17ich9m3e0jlq5.apps.googleusercontent.com',
             'secret': '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',
@@ -59,7 +54,6 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
 
 # Application definition
 
@@ -151,7 +145,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_DIR = os.path.join(BASE_DIR, 'static') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_URL = "media/"
 MEDIA_ROOT = MEDIA_DIR
@@ -160,6 +154,6 @@ MEDIA_ROOT = MEDIA_DIR
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+ACCOUNT_LOGIN_ON_SIGNUP = True 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
