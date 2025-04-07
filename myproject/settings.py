@@ -40,16 +40,16 @@ AUTHENTICATION_BACKENDS = (
 ACCOUNT_LOGIN_METHODS = {"email"}  # Новый параметр для входа по email
 ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]  # Поля при регистрации
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '727889862674-5k5pqmsbv5s19e58qc17ich9m3e0jlq5.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '435842298870-so3gl51e46j6qskp9mgi7smdu5oh2olg.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
         'APP': {
-            'client_id': '727889862674-5k5pqmsbv5s19e58qc17ich9m3e0jlq5.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': '435842298870-so3gl51e46j6qskp9mgi7smdu5oh2olg.apps.googleusercontent.com',
+            'secret': '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',
             'key': ''
         }
     }
@@ -71,6 +71,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'social_django',
+    'dashboard',
+    'accounts',
+
 ]
 
 MIDDLEWARE = [
@@ -88,15 +91,17 @@ ROOT_URLCONF = "myproject.urls"
 
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMP_DIR],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            BASE_DIR / 'templates',  # Убедитесь, что путь указывает на директорию с шаблонами
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
