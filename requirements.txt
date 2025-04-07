@@ -7,11 +7,12 @@ defusedxml
 Django
 django-allauth
 idna
-jwt
 oauthlib
 pillow
+pip
 pycparser
 PyJWT
+python-decouple
 python3-openid
 requests
 requests-oauthlib
