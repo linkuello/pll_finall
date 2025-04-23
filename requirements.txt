@@ -41,3 +41,6 @@ tornado
 tzdata
 urllib3
 vite
+dj-database-url
+python-dotenv
+whitenoise
